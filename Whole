@@ -1,1 +1,161 @@
 
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>calculator</title>
+<style type="text/css">
+body{
+
+border-radius: 8px;
+background-color:#ffffff;
+
+}
+
+.div1{
+border:2px solid #000;
+background-color:#ffffff;
+width:62%;
+height:42px;
+border-bottom-left-radius:7px;
+border-top-left-radius:7px;
+font-size:20px;
+position:absolute;
+left:65px;
+top:83px;
+font-family:fantasy;
+
+
+
+}
+
+button{
+width: 52px;
+height: 52px;
+margin: 6px 0.9px;
+outline: none;
+border:none;
+font-size: 19px;
+box-shadow: 0px 0px 0px white, 0 0 0px white, 0 0 5px black;
+background-color:white;
+border-radius:3px;
+}
+button:hover{
+cursor:crosshair;
+background-color:grey;
+color:black;
+}
+#dark-mode{
+font-size:10px;
+font-variant:small-caps;
+position:absolute;
+left:69px;
+}
+#clear{
+background-color:red;
+font-variant:small-caps;
+position:absolute;
+right:69px;
+top:80px;
+height:42px;
+border-right:2px solid red;
+}	 
+footer {
+font-size:12px;
+font-family:fantasy;
+}
+#sap{
+position:absolute;
+right:65px;}
+h1{
+font-family:fantasy;
+}
+
+</style>
+</head>
+<body>	 
+		<h1 align="center">M-calculator</h1>
+</p>
+	
+	<div class="all" >
+<p align="center" >
+			<input type="text" placeholder="calculate"  id="result" readonly="readonly" class="div1"   >
+			<button onclick="clearScreen()" id="clear" >Clear</button> 
+</p><br><br>	<br><br>
+
+	<div align="center" >
+<div class="row1" >
+				 <button onclick="updScreen(1)">1</button>
+				 <button onclick="updScreen(2)">2</button>
+				 <button onclick="updScreen(3)">3</button>
+			 <button id="special" onclick="updScreen('*')">x</button>
+</div>
+<div>
+			<button onclick="updScreen(4)">4</button>
+            <button onclick="updScreen(5)">5</button>
+            <button onclick="updScreen(6)">6</button>
+            <button id="special"  onclick="updScreen('-')">—</button>
+</div> 
+<div>
+	        <button onclick="updScreen(7)">7</button>
+			<button onclick="updScreen(8)">8</button>
+			<button onclick="updScreen(9)">9</button>
+			<button id="special"  onclick="updScreen('+')">+</button>
+			</div>
+<div>		    
+            <button onclick="updScreen('.')">.</button>
+            <button onclick="updScreen(0)">0</button>
+            <button onclick="updScreen('00')">00</button>
+            <button onclick="updScreen('/')">/</button>	    				 	
+</div>
+<div>
+			 <button  onclick="themeSwitcher()" id="dark-mode" > darkmode</button>
+			 <button id="sap"  onclick="result.value = eval(result.value)">=</button>
+			 
+ </div>		 
+			 
+</div>
+<footer align="center" >monac</footer>
+
+<script type="text/javascript">
+
+function clearScreen() {
+
+ document.getElementById("result")
+  .value = "";
+
+}
+
+function updScreen(val) {
+
+ var x = document.getElementById(
+  "result").value;
+
+ document.getElementById("result")
+  .value = x + val;
+
+}
+
+
+
+
+function themeSwitcher() {
+if(document.body.style.background=="black"){
+document.body.style.background = "white";
+document.querySelector("h1").style.color="black";
+document.querySelector("footer").style.color="black";
+document.getElementById("result").style.borderColor = "black";
+}
+else{
+document.body.style.background="black";
+document.querySelector("h1").style.color="white";
+document.querySelector("footer").style.color="white";
+document.getElementById("result").style.borderColor = "white";
+}
+ }
+
+</script>
+
+
+</body>
+</html>
